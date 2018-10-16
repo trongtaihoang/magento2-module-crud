@@ -45,8 +45,8 @@
         </settings>
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
-        <filterSearch name="fulltext"/>
-        <filters name="teacher">
+        <filterSearch name="teacher_name"/>
+        <filters name="listing_filters">
             <argument name="data" xsi:type="array">
                 <item name="observers" xsi:type="array">
                     <item name="column" xsi:type="string">column</item>
@@ -70,7 +70,7 @@
                         <message translate="true">Are you sure you want to delete selected items?</message>
                         <title translate="true">Delete items</title>
                     </confirm>
-                    <url path="HttCrud/page/massDelete"/>
+                    <url path="htt_crud/index/massDelete"/>
                     <type>delete</type>
                     <label translate="true">Delete</label>
                 </settings>
