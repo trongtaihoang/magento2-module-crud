@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Magento_Backend::content_teacher" title="Teacher" translate="title" module="Aht_HttCrud" sortOrder="30" resource="Aht_HttCrud::teacher"/>
+        <add id="Aht_HttCrud::crud_teacher" title="Teacher" translate="title" module="Aht_HttCrud" sortOrder="0" parent="Magento_Backend::content_teacher" action="htt_crud" resource="Aht_HttCrud::teacher"/>
+    </menu>
+</config>
+ 

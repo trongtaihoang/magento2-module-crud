@@ -1,0 +1,33 @@
+{
+  "name": "Aht/HttCrud",
+  "description": "Description of your Magento 2 module",
+  "type": "magento2-module",
+  "version": "1.0.7",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "magento/framework": "~100.0.4",
+    "magento/module-backend": "100.2.*",
+    "magento/module-ui": "101.0.*"
+  },
+  "authors": [
+    {
+      "name": "Hoang Trong Tai",
+      "email": "hoangtrongtaitb95@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Aht\\HttCrud\\": ""
+    }
+  }
+}

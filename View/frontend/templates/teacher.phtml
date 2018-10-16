@@ -1,0 +1,26 @@
+<a style="float: right; padding: 10px;background-color: red;color: black;text-decoration: none;" href="<?php echo $block->getUrl('*/*/add')?>">Add New Teacher</a>
+<table class="table table-inverse">
+	<thead>
+		<tr>
+			<th>Name </th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+			foreach ($block->getTeachers() as $value) {
+		?>
+			<tr>
+				<td><?php echo $value['teacher_name'] ?></td>
+				<td><?php echo $value['teacher_email'] ?></td>
+				<td><?php echo $value['teacher_phone'] ?></td>
+				<td><a href="<?php echo $block->getUrl('*/*/delete/teacher_id/'.$value['teacher_id'])?>">delete</a>/<a href="<?php echo $block->getUrl('*/*/edit/teacher_id/'.$value['teacher_id'])?>">edit</a></td>
+			</tr>
+		<?php
+			}
+		?>
+		
+	</tbody>
+</table>

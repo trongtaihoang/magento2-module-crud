@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">crud_teacher_form.teacher_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">teacher Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save_and_continue" class="Aht\HttCrud\Block\Adminhtml\Teacher\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Aht\HttCrud\Block\Adminhtml\Teacher\Edit\SaveButton"/>
+            <button name="reset" class="Aht\HttCrud\Block\Adminhtml\Teacher\Edit\ResetButton"/>
+            <button name="delete" class="Aht\HttCrud\Block\Adminhtml\Teacher\Edit\DeleteButton"/>
+            <button name="back" class="Aht\HttCrud\Block\Adminhtml\Teacher\Edit\BackButton"/>
+        </buttons>
+        <namespace>crud_teacher_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>crud_teacher_form.teacher_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="teacher_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider class="Aht\HttCrud\Model\teacher\DataProvider" name="teacher_form_data_source">
+            <settings>
+                <requestFieldName>teacher_id</requestFieldName>
+                <primaryFieldName>teacher_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="teacher_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">teacher</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>teacher_id</dataScope>
+            </settings>
+        </field>
+        <field name="teacher_name" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">teacher</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Teacher Name</label>
+                <dataScope>teacher_name</dataScope>
+            </settings>
+        </field>
+        <field name="teacher_email" sortOrder="30" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">teacher</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Teacher Email</label>
+                <dataScope>teacher_email</dataScope>
+            </settings>
+        </field>
+        <field name="teacher_phone" sortOrder="40" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">teacher</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Teacher Phone</label>
+                <dataScope>teacher_phone</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>
